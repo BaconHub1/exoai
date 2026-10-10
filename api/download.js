@@ -10,8 +10,9 @@ export default async function handler(req, res) {
 
   const repo = 'BaconHub1/exoai';
   const branch = 'main';
+
   const files = {
-    'fortnite': 'fortnite.exe',
+    'launcher': 'Launcher.exe',
   };
 
   const key = getFileKeyFromToken(token);
