@@ -483,14 +483,14 @@
     'use strict';
 
     // ===== YOUR DOWNLOADS =====
-    // 'key' matches the entry in api/download.js
+    // 'key' must match an entry in api/download.js
     const DOWNLOADS = [
       {
-        id: 'fortnite-exe',
-        name: 'fortnite.exe',
-        size: '50 MB',      // ← change to your real file size
+        id: 'launcher-exe',
+        name: 'Launcher.exe',
+        size: '?? MB',      // ← change to the real file size (see GitHub)
         type: 'exe',
-        key: 'fortnite'     // must match a key in api/download.js
+        key: 'launcher'     // must match api/download.js
       }
     ];
 
@@ -513,7 +513,7 @@
       return out;
     }
 
-    // Build a token:  fortnite-aB3xY9-1730000000
+    // Build a token:  launcher-aB3xY9-1730000000
     function buildToken(key) {
       const ts = Math.floor(Date.now() / 1000);
       return key + '-' + randomString(6) + '-' + ts;
@@ -549,7 +549,7 @@
       if (countBadge) countBadge.textContent = DOWNLOADS.length;
 
       let html = '';
-      DOWNLOADS.forEach((item, index) => {
+      DOWNLOADS.forEach(function(item, index) {
         const iconClass = getFileIcon(item.type);
         const typeColor = getTypeColor(item.type);
         const animationDelay = Math.min(index * 0.06, 0.35);
@@ -587,7 +587,6 @@
         if (!btn) return;
         const key = btn.getAttribute('data-key');
         if (!key) return;
-
         const token = buildToken(key);
         window.location.href = '/api/download?token=' + encodeURIComponent(token);
       });
