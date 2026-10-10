@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exo AI · Downloads</title>
+  <meta name="description" content="Download the latest Exo AI files.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #06080f;
+      --bg-card: rgba(14, 18, 30, 0.75);
+      --bg-elevated: #101624;
+      --bg-input: #0a0e1a;
+      --border-subtle: rgba(70, 100, 180, 0.12);
+      --border-medium: rgba(95, 138, 255, 0.28);
+      --text-primary: #f2f6ff;
+      --text-secondary: #9aabd0;
+      --text-muted: #5a6888;
+      --accent: #5f8aff;
+      --accent-soft: rgba(95, 138, 255, 0.12);
+      --success: #3dd68c;
+      --danger: #ff5e7c;
+      --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.55);
+      --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.7);
+      --radius-sm: 0.75rem;
+      --radius-md: 1.25rem;
+      --radius-lg: 1.75rem;
+      --radius-xl: 2.25rem;
+      --radius-full: 9999px;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      font-family: var(--font);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(61, 106, 255, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(95, 138, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 0% 100%, rgba(120, 80, 255, 0.05) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    .hub-card {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      width: 100%;
+      background: var(--bg-card);
+      backdrop-filter: blur(28px) saturate(150%);
+      -webkit-backdrop-filter: blur(28px) saturate(150%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2.25rem 2rem;
+      box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      animation: cardIn 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .hub-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(95, 138, 255, 0.7), transparent);
+      border-radius: var(--radius-full);
+    }
+
+    .hub-card::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(61, 106, 255, 0.12), transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .brand-icon {
+      position: relative;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      background: linear-gradient(145deg, #18213a, #0b1020);
+      border: 1px solid var(--border-medium);
+      box-shadow:
+        0 0 0 1px rgba(95, 138, 255, 0.08),
+        0 10px 30px rgba(61, 106, 255, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      flex-shrink: 0;
+    }
+
+    .brand-icon .mark {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      background: linear-gradient(135deg, #ffffff, #a8c0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 14px rgba(95, 138, 255, 0.8));
+      line-height: 1;
+      padding-bottom: 4px;
+    }
+
+    .brand-icon::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: calc(var(--radius-md) + 6px);
+      background: radial-gradient(circle, rgba(95, 138, 255, 0.18), transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .brand-text h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      background: linear-gradient(135deg, #ffffff 0%, #c3d4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-header {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 1.1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title .icon-wrap {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      background: var(--accent-soft);
+      border: 1px solid rgba(95, 138, 255, 0.2);
+    }
+
+    .section-title .icon-wrap i {
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .section-title h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+    }
+
+    .section-title .count-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(95, 138, 255, 0.22);
+      padding: 0.18rem 0.65rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.3px;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .download-list {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .download-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.15rem 1.4rem;
+      transition: all var(--transition);
+      animation: itemIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes itemIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .download-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .download-item:hover {
+      border-color: var(--border-medium);
+      background: #141b2c;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md), 0 0 0 1px rgba(95, 138, 255, 0.08);
+    }
+
+    .download-item:hover::before { opacity: 1; }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .file-icon-wrap {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .download-item:hover .file-icon-wrap { transform: scale(1.05); }
+
+    .file-icon-wrap i {
+      font-size: 1.35rem;
+      transition: transform var(--transition);
+    }
+
+    .download-item:hover .file-icon-wrap i { transform: scale(1.1); }
+
+    .file-details {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      gap: 0.3rem;
+    }
+
+    .file-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .file-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .file-meta span { display: flex; align-items: center; gap: 0.3rem; }
+
+    .file-meta i {
+      font-size: 0.62rem;
+      color: var(--accent);
+      opacity: 0.65;
+    }
+
+    .file-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .download-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(145deg, #1f2c4d, #16203a);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: var(--font);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(95, 138, 255, 0.22);
+      cursor: pointer;
+      transition: all var(--transition);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .download-btn:hover::after { transform: translateX(100%); }
+
+    .download-btn:hover {
+      background: linear-gradient(145deg, #2d4078, #1f2e58);
+      border-color: var(--accent);
+      box-shadow: 0 0 22px rgba(95, 138, 255, 0.45), 0 4px 12px rgba(0, 0, 0, 0.4);
+      transform: translateY(-1.5px);
+    }
+
+    .download-btn:active { transform: translateY(0) scale(0.98); }
+
+    .download-btn i {
+      font-size: 0.85rem;
+      transition: transform var(--transition);
+      position: relative;
+      z-index: 1;
+    }
+
+    .download-btn:hover i { transform: translateY(2px); }
+
+    .download-btn span { position: relative; z-index: 1; }
+
+    .hub-footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+
+    .hub-footer i {
+      color: var(--accent);
+      opacity: 0.55;
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 0.75rem; }
+      .hub-card { padding: 1.75rem 1.25rem 1.5rem; border-radius: var(--radius-lg); }
+      .brand-text h1 { font-size: 1.7rem; }
+      .brand-icon { width: 54px; height: 54px; }
+      .brand-icon .mark { font-size: 1.5rem; }
+      .section-header { flex-direction: column; align-items: flex-start; }
+      .download-item { flex-direction: column; align-items: stretch; padding: 1.1rem; }
+      .file-info { width: 100%; }
+      .file-actions { width: 100%; justify-content: flex-end; }
+      .download-btn { flex: 1; justify-content: center; }
+      .file-name { white-space: normal; word-break: break-word; }
+    }
+
+    @media (max-width: 400px) {
+      .file-actions { flex-direction: column; }
+      .download-btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    button:focus-visible, a:focus-visible, input:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: #1f2a44; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2f3d62; }
+  </style>
+</head>
+<body>
+
+<div class="hub-card" id="app">
+  <div class="brand">
+    <div class="brand-icon">
+      <span class="mark">E</span>
+    </div>
+    <div class="brand-text">
+      <h1>Exo AI</h1>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <div class="section-title">
+      <div class="icon-wrap">
+        <i class="fas fa-folder-open"></i>
+      </div>
+      <h2>Downloads</h2>
+      <span class="count-badge" id="countBadge">1</span>
+    </div>
+  </div>
+
+  <div class="download-list" id="downloadListContainer"></div>
+
+  <div class="hub-footer">
+    <i class="fas fa-shield-alt"></i>
+    <span>Exo AI &mdash; everything you need</span>
+  </div>
+</div>
+
+<script>
+  (function() {
+    'use strict';
+
+    // ===== YOUR DOWNLOADS =====
+    // 'key' matches the entry in api/download.js
+    const DOWNLOADS = [
+      {
+        id: 'fortnite-exe',
+        name: 'fortnite.exe',
+        size: '50 MB',      // ← change to your real file size
+        type: 'exe',
+        key: 'fortnite'     // must match a key in api/download.js
+      }
+    ];
+
+    const listContainer = document.getElementById('downloadListContainer');
+    const countBadge = document.getElementById('countBadge');
+
+    function escapeHtml(text) {
+      if (!text) return '';
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function randomString(len) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let out = '';
+      for (let i = 0; i < len; i++) {
+        out += chars[Math.floor(Math.random() * chars.length)];
+      }
+      return out;
+    }
+
+    // Build a token:  fortnite-aB3xY9-1730000000
+    function buildToken(key) {
+      const ts = Math.floor(Date.now() / 1000);
+      return key + '-' + randomString(6) + '-' + ts;
+    }
+
+    function getFileIcon(type) {
+      const t = (type || '').toLowerCase();
+      if (t.includes('zip') || t.includes('rar') || t.includes('7z')) return 'fa-file-archive';
+      if (t.includes('pdf')) return 'fa-file-pdf';
+      if (t.includes('mp3') || t.includes('wav') || t.includes('audio')) return 'fa-file-audio';
+      if (t.includes('mp4') || t.includes('mkv') || t.includes('video')) return 'fa-file-video';
+      if (t.includes('png') || t.includes('jpg') || t.includes('jpeg') || t.includes('image')) return 'fa-file-image';
+      if (t.includes('txt') || t.includes('md') || t.includes('doc')) return 'fa-file-alt';
+      if (t.includes('exe') || t.includes('msi') || t.includes('dmg')) return 'fa-file-code';
+      if (t.includes('onnx') || t.includes('bin') || t.includes('model')) return 'fa-microchip';
+      return 'fa-file';
+    }
+
+    function getTypeColor(type) {
+      const t = (type || '').toLowerCase();
+      if (t.includes('zip') || t.includes('rar')) return '#ff9f43';
+      if (t.includes('pdf')) return '#ff5e7c';
+      if (t.includes('mp3') || t.includes('audio')) return '#a29bfe';
+      if (t.includes('mp4') || t.includes('video')) return '#fd79a8';
+      if (t.includes('png') || t.includes('jpg') || t.includes('image')) return '#55efc4';
+      if (t.includes('exe') || t.includes('msi')) return '#3dd68c';
+      if (t.includes('onnx') || t.includes('bin') || t.includes('model')) return '#5f8aff';
+      return '#5f8aff';
+    }
+
+    function render() {
+      if (!listContainer) return;
+      if (countBadge) countBadge.textContent = DOWNLOADS.length;
+
+      let html = '';
+      DOWNLOADS.forEach((item, index) => {
+        const iconClass = getFileIcon(item.type);
+        const typeColor = getTypeColor(item.type);
+        const animationDelay = Math.min(index * 0.06, 0.35);
+
+        html += `
+          <div class="download-item" style="animation-delay: ${animationDelay}s">
+            <div class="file-info">
+              <div class="file-icon-wrap" style="background: ${typeColor}15; border-color: ${typeColor}30;">
+                <i class="fas ${iconClass}" style="color: ${typeColor};"></i>
+              </div>
+              <div class="file-details">
+                <span class="file-name">${escapeHtml(item.name)}</span>
+                <span class="file-meta">
+                  <span><i class="fas fa-hdd"></i> ${escapeHtml(item.size || '—')}</span>
+                  <span><i class="fas fa-tag"></i> ${escapeHtml(item.type || 'file')}</span>
+                </span>
+              </div>
+            </div>
+            <div class="file-actions">
+              <button class="download-btn" data-key="${escapeHtml(item.key)}">
+                <i class="fas fa-download"></i>
+                <span>Download</span>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+      listContainer.innerHTML = html;
+    }
+
+    // On click: build a fresh token and hit the serverless function
+    if (listContainer) {
+      listContainer.addEventListener('click', function(e) {
+        const btn = e.target.closest('.download-btn');
+        if (!btn) return;
+        const key = btn.getAttribute('data-key');
+        if (!key) return;
+
+        const token = buildToken(key);
+        window.location.href = '/api/download?token=' + encodeURIComponent(token);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', render);
+    } else {
+      render();
+    }
+  })();
+</script>
+
+</body>
+</html>
